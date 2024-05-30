@@ -48,22 +48,20 @@ function gradeQuiz(candidateAnswers) {
 
 // Part 3:
   let numberOfCorrectAnswers = 0;
-  let numberOfQuizQuestions = 5;
-  let grade = ((numberOfCorrectAnswers) / (numberOfQuizQuestions) * 100);  //TODO 3.2 use this variable to calculate the candidates score.
-
-  // console.log(`your answer ${candidateAnswers[i]}`);
 
   for (let i = 0; i < questions.length; i++) {
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
-      ++numberOfCorrectAnswers
+      numberOfCorrectAnswers++
     }
     console.log(numberOfCorrectAnswers, "correct answers");
-    // console.log(`your answer ${candidateAnswers[i]}`);
   }
+// console.log(numberOfCorrectAnswers);
 
-  console.log(grade, 'grade');
+  // console.log(grade, 'grade');
+  let grade = (numberOfCorrectAnswers / 5 * 100);  //TODO 3.2 use this variable to calculate the candidates score.
 
-if (grade => 80) {
+// return grade;
+if (grade >= 80) {
   console.log(`Congratulations, candidate!  You have passed the quiz, with ${grade}%!`);
 } else {
   console.log(`Sorry, candidate!  You scored ${grade}% which is below the 80% required to pass the quiz.  Better luck next time!`);
